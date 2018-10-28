@@ -3,6 +3,12 @@ package service
 import (
 	"flag"
 	"fmt"
+	"net"
+	"net/http"
+	"os"
+	"os/signal"
+	"syscall"
+
 	endpoint1 "github.com/go-kit/kit/endpoint"
 	log "github.com/go-kit/kit/log"
 	prometheus "github.com/go-kit/kit/metrics/prometheus"
@@ -17,13 +23,8 @@ import (
 	pb "github.com/wotmshuaisi/gokitexample/notificator/pkg/grpc/pb"
 	service "github.com/wotmshuaisi/gokitexample/notificator/pkg/service"
 	grpc1 "google.golang.org/grpc"
-	"net"
-	"net/http"
-	"os"
-	"os/signal"
 	appdash "sourcegraph.com/sourcegraph/appdash"
 	opentracing "sourcegraph.com/sourcegraph/appdash/opentracing"
-	"syscall"
 )
 
 var tracer opentracinggo.Tracer
@@ -32,9 +33,9 @@ var logger log.Logger
 // Define our flags. Your service probably won't need to bind listeners for
 // all* supported transports, but we do it here for demonstration purposes.
 var fs = flag.NewFlagSet("notificator", flag.ExitOnError)
-var debugAddr = fs.String("debug.addr", ":8080", "Debug and metrics listen address")
-var httpAddr = fs.String("http-addr", ":8081", "HTTP listen address")
-var grpcAddr = fs.String("grpc-addr", ":8082", "gRPC listen address")
+var debugAddr = fs.String("debug.addr", ":8084", "Debug and metrics listen address")
+var httpAddr = fs.String("http-addr", ":8085", "HTTP listen address")
+var grpcAddr = fs.String("grpc-addr", ":8086", "gRPC listen address")
 var thriftAddr = fs.String("thrift-addr", ":8083", "Thrift listen address")
 var thriftProtocol = fs.String("thrift-protocol", "binary", "binary, compact, json, simplejson")
 var thriftBuffer = fs.Int("thrift-buffer", 0, "0 for unbuffered")
