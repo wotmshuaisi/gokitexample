@@ -47,7 +47,7 @@ func Run() {
 	fs.Parse(os.Args[1:])
 
 	// Create a single logger, which we'll use and give to other components.
-	logger = log.NewLogfmtLogger(os.Stderr)
+	logger = log.NewLogfmtLogger(os.Stdout)
 	logger = log.With(logger, "ts", log.DefaultTimestampUTC)
 	logger = log.With(logger, "caller", log.DefaultCaller)
 

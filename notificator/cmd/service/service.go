@@ -1,6 +1,7 @@
 package service
 
 import (
+	"context"
 	"flag"
 	"fmt"
 	"net"
@@ -12,6 +13,7 @@ import (
 	endpoint1 "github.com/go-kit/kit/endpoint"
 	log "github.com/go-kit/kit/log"
 	prometheus "github.com/go-kit/kit/metrics/prometheus"
+	"github.com/go-kit/kit/sd/etcd"
 	lightsteptracergo "github.com/lightstep/lightstep-tracer-go"
 	group "github.com/oklog/oklog/pkg/group"
 	opentracinggo "github.com/opentracing/opentracing-go"
@@ -44,6 +46,7 @@ var zipkinURL = fs.String("zipkin-url", "", "Enable Zipkin tracing via a collect
 var lightstepToken = fs.String("lightstep-token", "", "Enable LightStep tracing via a LightStep access token")
 var appdashAddr = fs.String("appdash-addr", "", "Enable Appdash tracing via an Appdash server host:port")
 
+// Run ...
 func Run() {
 	fs.Parse(os.Args[1:])
 
@@ -87,8 +90,14 @@ func Run() {
 	g := createService(eps)
 	initMetricsEndpoint(g)
 	initCancelInterrupt(g)
+	// service discovery
+	registrar, err := registerService(logger)
+	if err != nil {
+		logger.Log(err)
+		return
+	}
+	defer registrar.Deregister()
 	logger.Log("exit", g.Run())
-
 }
 func initGRPCHandler(endpoints endpoint.Endpoints, g *group.Group) {
 	options := defaultGRPCOptions(logger, tracer)
@@ -156,4 +165,27 @@ func initCancelInterrupt(g *group.Group) {
 	}, func(error) {
 		close(cancelInterrupt)
 	})
+}
+
+// register service to service discovery
+func registerService(logger log.Logger) (*etcd.Registrar, error) {
+	var (
+		etcdServer = "http://etcd:2379"
+		prefix     = "/services/notificator"
+		instance   = "notificator:8086"
+		key        = prefix + instance
+	)
+	// client, err := consul.NewClient(context.)
+	client, err := etcd.NewClient(context.Background(), []string{etcdServer}, etcd.ClientOptions{})
+	if err != nil {
+		return nil, err
+	}
+
+	registrar := etcd.NewRegistrar(client, etcd.Service{
+		Key:   key,
+		Value: instance,
+	}, logger)
+	registrar.Register()
+	logger.Log("notificator registered in", instance)
+	return registrar, nil
 }

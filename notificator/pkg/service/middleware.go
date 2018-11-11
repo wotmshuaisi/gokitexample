@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+
 	log "github.com/go-kit/kit/log"
 )
 
@@ -22,9 +23,9 @@ func LoggingMiddleware(logger log.Logger) Middleware {
 
 }
 
-func (l loggingMiddleware) SendEmail(ctx context.Context, email string, content string) (err error) {
+func (l loggingMiddleware) SendEmail(ctx context.Context, email string, content string) (id string, err error) {
 	defer func() {
-		l.logger.Log("method", "SendEmail", "email", email, "content", content, "err", err)
+		l.logger.Log("method", "SendEmail", "email", email, "content", content, "id", id, "err", err)
 	}()
 	return l.next.SendEmail(ctx, email, content)
 }

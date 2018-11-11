@@ -9,7 +9,7 @@ services:
     - .:/go/src/github.com/wotmshuaisi/gokitexample
     container_name: bugs
     ports:
-    - 8801:8081
+    - 8801:8082
   notificator:
     build:
       context: .
@@ -19,7 +19,7 @@ services:
     - .:/go/src/github.com/wotmshuaisi/gokitexample
     container_name: notificator
     ports:
-    - 8800:8082
+    - 8800:8085
   users:
     build:
       context: .
@@ -29,4 +29,16 @@ services:
     - .:/go/src/github.com/wotmshuaisi/gokitexample
     container_name: users
     ports:
-    - 8802:8081
+    - 8802:8088
+  etcd:
+    image: 'quay.io/coreos/etcd:v3.1.7'
+    restart: always
+    ports:
+      - '23791:2379'
+      - '23801:2380'
+    environment:
+      ETCD_NAME: infra
+      ETCD_INITIAL_ADVERTISE_PEER_URLS: 'http://etcd:2300'
+      ETCD_INITIAL_CLUSTER: 'infra=http://etcd:2300'
+      ETCD_INITIAL_CLUSTER_STATE: new
+      ETCD_INITIAL_CLUSTER_TOKEN: secrettoken

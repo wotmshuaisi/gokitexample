@@ -6,10 +6,12 @@ require (
 	github.com/VividCortex/gohistogram v1.0.0 // indirect
 	github.com/apache/thrift v0.0.0-20181019115558-cd829a0b9a5c // indirect
 	github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973 // indirect
+	github.com/canthefason/go-watcher v0.2.4 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/eapache/go-resiliency v1.1.0 // indirect
 	github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
+	github.com/fatih/color v1.7.0 // indirect
 	github.com/go-kit/kit v0.7.0
 	github.com/go-logfmt/logfmt v0.3.0 // indirect
 	github.com/go-stack/stack v1.8.0 // indirect
@@ -17,6 +19,8 @@ require (
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
 	github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515 // indirect
 	github.com/lightstep/lightstep-tracer-go v0.15.6
+	github.com/mattn/go-colorable v0.0.9 // indirect
+	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/oklog/oklog v0.3.2
 	github.com/oklog/run v1.0.0 // indirect

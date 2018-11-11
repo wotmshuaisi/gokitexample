@@ -1,0 +1,138 @@
+# github.com/Shopify/sarama v1.19.0
+github.com/Shopify/sarama
+# github.com/apache/thrift v0.0.0-20181019115558-cd829a0b9a5c
+github.com/apache/thrift/lib/go/thrift
+# github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973
+github.com/beorn7/perks/quantile
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
+# github.com/eapache/go-resiliency v1.1.0
+github.com/eapache/go-resiliency/breaker
+# github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21
+github.com/eapache/go-xerial-snappy
+# github.com/eapache/queue v1.1.0
+github.com/eapache/queue
+# github.com/go-kit/kit v0.7.0
+github.com/go-kit/kit/endpoint
+github.com/go-kit/kit/log
+github.com/go-kit/kit/metrics/prometheus
+github.com/go-kit/kit/tracing/opentracing
+github.com/go-kit/kit/transport/http
+github.com/go-kit/kit/metrics
+github.com/go-kit/kit/metrics/internal/lv
+# github.com/go-logfmt/logfmt v0.3.0
+github.com/go-logfmt/logfmt
+# github.com/go-stack/stack v1.8.0
+github.com/go-stack/stack
+# github.com/gogo/protobuf v1.1.1
+github.com/gogo/protobuf/proto
+github.com/gogo/protobuf/io
+# github.com/golang/protobuf v1.2.0
+github.com/golang/protobuf/proto
+github.com/golang/protobuf/ptypes/timestamp
+github.com/golang/protobuf/protoc-gen-go/descriptor
+github.com/golang/protobuf/ptypes
+github.com/golang/protobuf/ptypes/any
+github.com/golang/protobuf/ptypes/duration
+# github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db
+github.com/golang/snappy
+# github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515
+github.com/kr/logfmt
+# github.com/lightstep/lightstep-tracer-go v0.15.6
+github.com/lightstep/lightstep-tracer-go
+github.com/lightstep/lightstep-tracer-go/collectorpb
+github.com/lightstep/lightstep-tracer-go/lightstep/rand
+github.com/lightstep/lightstep-tracer-go/lightstep_thrift
+github.com/lightstep/lightstep-tracer-go/lightsteppb
+github.com/lightstep/lightstep-tracer-go/thrift_0_9_2/lib/go/thrift
+# github.com/matttproud/golang_protobuf_extensions v1.0.1
+github.com/matttproud/golang_protobuf_extensions/pbutil
+# github.com/oklog/oklog v0.3.2
+github.com/oklog/oklog/pkg/group
+# github.com/oklog/run v1.0.0
+github.com/oklog/run
+# github.com/opentracing-contrib/go-observer v0.0.0-20170622124052-a52f23424492
+github.com/opentracing-contrib/go-observer
+# github.com/opentracing/basictracer-go v1.0.0
+github.com/opentracing/basictracer-go
+github.com/opentracing/basictracer-go/wire
+# github.com/opentracing/opentracing-go v1.0.2
+github.com/opentracing/opentracing-go
+github.com/opentracing/opentracing-go/ext
+github.com/opentracing/opentracing-go/log
+# github.com/openzipkin/zipkin-go-opentracing v0.3.4
+github.com/openzipkin/zipkin-go-opentracing
+github.com/openzipkin/zipkin-go-opentracing/flag
+github.com/openzipkin/zipkin-go-opentracing/thrift/gen-go/scribe
+github.com/openzipkin/zipkin-go-opentracing/thrift/gen-go/zipkincore
+github.com/openzipkin/zipkin-go-opentracing/types
+github.com/openzipkin/zipkin-go-opentracing/wire
+# github.com/pierrec/lz4 v2.0.5+incompatible
+github.com/pierrec/lz4
+github.com/pierrec/lz4/internal/xxh32
+# github.com/prometheus/client_golang v0.9.0
+github.com/prometheus/client_golang/prometheus
+github.com/prometheus/client_golang/prometheus/promhttp
+github.com/prometheus/client_golang/prometheus/internal
+# github.com/prometheus/client_model v0.0.0-20180712105110-5c3871d89910
+github.com/prometheus/client_model/go
+# github.com/prometheus/common v0.0.0-20181020173914-7e9e6cabbd39
+github.com/prometheus/common/expfmt
+github.com/prometheus/common/model
+github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+# github.com/prometheus/procfs v0.0.0-20181005140218-185b4288413d
+github.com/prometheus/procfs
+github.com/prometheus/procfs/nfs
+github.com/prometheus/procfs/xfs
+github.com/prometheus/procfs/internal/util
+# github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a
+github.com/rcrowley/go-metrics
+# golang.org/x/net v0.0.0-20180906233101-161cd47e91fd
+golang.org/x/net/context
+golang.org/x/net/http2
+golang.org/x/net/http/httpguts
+golang.org/x/net/http2/hpack
+golang.org/x/net/idna
+golang.org/x/net/trace
+golang.org/x/net/internal/timeseries
+# golang.org/x/sys v0.0.0-20180909124046-d0be0721c37e
+golang.org/x/sys/unix
+# golang.org/x/text v0.3.0
+golang.org/x/text/secure/bidirule
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+golang.org/x/text/transform
+# google.golang.org/genproto v0.0.0-20181026194446-8b5d7a19e2d9
+google.golang.org/genproto/googleapis/api/annotations
+google.golang.org/genproto/googleapis/rpc/status
+# google.golang.org/grpc v1.16.0
+google.golang.org/grpc/metadata
+google.golang.org/grpc
+google.golang.org/grpc/credentials
+google.golang.org/grpc/balancer
+google.golang.org/grpc/balancer/roundrobin
+google.golang.org/grpc/codes
+google.golang.org/grpc/connectivity
+google.golang.org/grpc/encoding
+google.golang.org/grpc/encoding/proto
+google.golang.org/grpc/grpclog
+google.golang.org/grpc/internal
+google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/internal/channelz
+google.golang.org/grpc/internal/envconfig
+google.golang.org/grpc/internal/grpcrand
+google.golang.org/grpc/internal/transport
+google.golang.org/grpc/keepalive
+google.golang.org/grpc/naming
+google.golang.org/grpc/peer
+google.golang.org/grpc/resolver
+google.golang.org/grpc/resolver/dns
+google.golang.org/grpc/resolver/passthrough
+google.golang.org/grpc/stats
+google.golang.org/grpc/status
+google.golang.org/grpc/tap
+google.golang.org/grpc/balancer/base
+# sourcegraph.com/sourcegraph/appdash v0.0.0-20180531100431-4c381bd170b4
+sourcegraph.com/sourcegraph/appdash
+sourcegraph.com/sourcegraph/appdash/opentracing
+sourcegraph.com/sourcegraph/appdash/internal/wire

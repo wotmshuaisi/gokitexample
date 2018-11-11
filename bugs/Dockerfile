@@ -1,4 +1,8 @@
-FROM golang
+FROM golang:1.11.1-alpine3.8
+
+RUN apk add --no-cache git
+
+# ENV HTTP_PROXY "http://172.17.0.1:7777"
 
 RUN mkdir -p /go/src/github.com/wotmshuaisi/gokitexample
 
